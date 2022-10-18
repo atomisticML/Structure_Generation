@@ -78,7 +78,7 @@ class System_Enum:
 					new_atoms.set_pbc(True)
 					compressed_expanded[icrystal][istrct].append(new_atoms)
 					write('ats_%s_%s_%1.3f_%d.vasp' % (chem_str,crystal,istep,istrct)  , new_atoms)
-		
+
 
 base_species = ['Ag','Au']
 se = System_Enum(base_species)
