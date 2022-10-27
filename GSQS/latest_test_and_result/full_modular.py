@@ -214,6 +214,7 @@ def MC_loop(starting_atoms_in, species, beta, minsteps,moment_weights = (1.0,0.0
 	types = [i + 1 for i in range(len(species))]
 	count = 1
 	hist = []
+	full_hist = []
 	last_Q = (1/beta) * 500000
 	starting_atoms = starting_atoms_in.copy()
 	while count < minsteps and last_Q > abs_tol:
@@ -224,11 +225,13 @@ def MC_loop(starting_atoms_in, species, beta, minsteps,moment_weights = (1.0,0.0
 		except UnboundLocalError:
 			current_atoms = starting_atoms.copy()
 			tst_atoms = mc_step(current_atoms,species,big_step=big_step,scale=step_size,pos_vs_chem_ratio=0.0)
-		print (tst_atoms,current_atoms)
 		test_comp = get_comp(tst_atoms,species)
 		this_prefix = 'temp_%f_iter_%d' % (beta,count)
 		write('%s.data' % file_prefix,tst_atoms,format='lammps-data')
 		tst_arr = run_struct(tst_atoms, '%s.data'% this_prefix)
+		avg_tst = np.average(tst_arr,axis=0)
+		var_tst = np.average(tst_arr,axis=0)
+		
 		this_Q1,abs_diffs1 = cost_func_1(tst_arr,target_1,tst_atoms)
 		this_Q2,abs_diffs2 = cost_func_2(tst_arr,target_2,tst_atoms)
 		test_Q = (moment_weights[0]*this_Q1) + (moment_weights[1]*this_Q2)
@@ -238,6 +241,7 @@ def MC_loop(starting_atoms_in, species, beta, minsteps,moment_weights = (1.0,0.0
 		bolt1 = np.exp(-resid_diff*beta)
 		logical_2 = rndi <= bolt1
 		print (count, test_Q, last_Q)
+		full_hist.append(test_Q)
 		#print (count,Q1,Q2)
 		if logical_1:
 			last_Q = test_Q
@@ -254,7 +258,7 @@ def MC_loop(starting_atoms_in, species, beta, minsteps,moment_weights = (1.0,0.0
 		count += 1
 	#print (abs_diffs1)
 	#print (abs_diffs2)
-	return current_atoms, last_Q, hist, n_accept
+	return current_atoms, last_Q, hist, full_hist, n_accept
 """
 initial_resid = Q1 + (0.0*Q2)
 beta = (1/initial_resid)*10
@@ -274,7 +278,8 @@ for ibeta,beta_fac in enumerate(beta_facs):
 	beta = beta_scale* beta_fac
 	if stepped_atoms != None:
 		reduced_structure = stepped_atoms.copy()
-	stepped_atoms, last_Q, resid_hist, n_accept = MC_loop(reduced_structure,['Ca','Mg'],beta, minsteps=300, moment_weights=moment_weights)
+	stepped_atoms, last_Q, resid_hist, full_hist, n_accept = MC_loop(reduced_structure,['Ca','Mg'],beta, minsteps=300, moment_weights=moment_weights)
+	np.save('hist_%d.npy' % ibeta,np.array(full_hist)) 
 	print (initial_resid,last_Q)
 	print (atoms,stepped_atoms)
 	write('this_step_%d.cif' % ibeta,stepped_atoms)

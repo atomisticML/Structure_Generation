@@ -37,14 +37,14 @@ class System_Enum:
 			blocks = blocks
 		self.blocks = blocks
 
-	def enumerate_structures(self, min_int_mult, max_int_mult):
+	def enumerate_structures(self, min_int_mult, max_int_mult,concentration_restrictions):
 		all_structs = []
 		assert self.a != None, "set_lattice_constant first, then do enumeration"
 		assert self.blocks != None, "set_substitutuional_blocks first, then do structure enumeration"
 		for icrystal,crystal in enumerate(self.crystal_structures):
 			primitive = bulk(self.base_species[0] , crystal , a=self.a[icrystal] , cubic=False)
 			print ('generating structures for crystal: %s' % crystal)
-			enumerated = enumerate_structures(primitive, range(min_int_mult, max_int_mult), self.blocks[icrystal])
+			enumerated = enumerate_structures(primitive, range(min_int_mult, max_int_mult), self.blocks[icrystal],concentration_restrictions=conc_rest)
 			sublist = [ i for i in enumerated ]
 			self.stored_lattice['a'][crystal] = self.a[icrystal]
 			all_structs.append(sublist)
@@ -79,14 +79,19 @@ class System_Enum:
 					compressed_expanded[icrystal][istrct].append(new_atoms)
 					write('ats_%s_%s_%1.3f_%d.vasp' % (chem_str,crystal,istep,istrct)  , new_atoms)
 
-
-base_species = ['Ag','Au']
+min_cell=10
+max_cell=10
+base_species = ["Mo", "Nb", "Ta", "Ti", "W"]
+#HEAVY tungsten
+conc_rest = {'W': (0.6, 0.6)}
+#conc_rest = {elm: (1/len(base_species),1/len(base_species)) for elm in base_species}
+print (conc_rest)
 se = System_Enum(base_species)
-crystal_structures = ['fcc','bcc']
+crystal_structures = ['bcc']
 se.set_crystal_structures(crystal_structures)
-se.set_lattice_constant([4.0 , 3.8])
+se.set_lattice_constant([3.25 ])
 se.set_substitutional_blocks([base_species,base_species])
-astrcts = se.enumerate_structures(1,5)
+astrcts = se.enumerate_structures(min_cell,max_cell+1,concentration_restrictions=conc_rest)
 
 for icrystal,crystal in enumerate(crystal_structures):
 	strcts = astrcts[icrystal]
@@ -95,4 +100,4 @@ for icrystal,crystal in enumerate(crystal_structures):
 		chem_str = '-'.join(b for b in chem_lst) % tuple(base_species)
 		write('ats_%s_%s_%d.vasp' % (chem_str,crystal,istrct)  , strct)
 		
-se.compress_expand(axes = [0,1,2],stepsize=0.03, nsteps = 2 )
+se.compress_expand(axes = [0,1,2], stepsize=0.01, nsteps = 0 )
