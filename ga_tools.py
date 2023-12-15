@@ -95,7 +95,7 @@ class Selector:
         if self.selection_style == 'tournament':
             self.selection = tournament_selection
 
-# simple crossover function for atomic coordinates
+#MUTATION AND CROSSOVER FUNCTIONS
 def crossover(p1, p2, inputseed = None):
     assert len(p1) == len(p2), "parents must have the same length"
     psize = len(p1)
@@ -166,11 +166,6 @@ def perturb_one_atom(atoms,scale=0.5,max_attempt=100,apply_to='ase'):
         new_atoms[pert_ind][2] += posneg[2]
         return new_atoms
 
-#from ase import Atoms,Atom
-#atoms = Atoms(['Ag']*20,positions=np.random.uniform(-8,8, (20,3)))
-#atoms.set_cell(np.eye(3)*16)
-#perturb_one_atom(atoms)
-
 
 def flip_one_atom(atoms,types):
     new_atoms = atoms.copy()
@@ -220,12 +215,6 @@ def perturb_N_atoms(atoms,scale=0.5,max_attempt = 100, fraction=0.25):
     if not good_pert:
         print ("WARNING: this mutation has a bad neighbor distance - try changing your scale parameter")
     return new_atoms
-
-
-#from ase import Atoms,Atom
-#atoms = Atoms(['Ag']*20,positions=np.random.uniform(-8,8, (20,3)))
-#atoms.set_cell(np.eye(3)*16)
-#perturb_N_atoms(atoms)
 
 
 def flip_N_atoms(atoms,types,fraction=None):
