@@ -9,14 +9,14 @@ syms = [s for s in atoms.symbols]
 atoms.symbols = ['Ca', 'Mg', 'Mg', 'Mg']
 write('conventional.cif',atoms)
 #['Mg', 'O', 'Mg', 'O', 'Mg', 'O', 'Mg', 'O']
-big_cell = atoms * (2,2,2)
+big_cell = atoms * (1,1,1)
 
 write('supercell_target.cif',big_cell)
 
 
 satoms = bulk('Mg','fcc',a=4.3,cubic=True)
 satoms.symbols = ['Ca', 'Ca', 'Ca', 'Mg']
-starting_struct = satoms * (2,2,2)
+starting_struct = satoms * (1,1,2)
 
 write('starting.cif',starting_struct)
 
