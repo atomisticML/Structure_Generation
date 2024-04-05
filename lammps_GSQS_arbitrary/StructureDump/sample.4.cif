@@ -1,0 +1,30 @@
+data_image0
+_chemical_formula_structural       Li2W2Li
+_chemical_formula_sum              "Li3 W2"
+_cell_length_a       2.50809
+_cell_length_b       14.6246
+_cell_length_c       2.50809
+_cell_angle_alpha    90
+_cell_angle_beta     90
+_cell_angle_gamma    59.0362
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Li  Li1       1.0  0.11634  0.08013  0.17388  1.0000
+  Li  Li2       1.0  0.17240  0.22811  0.67178  1.0000
+  W   W1        1.0  0.05675  0.93332  0.66558  1.0000
+  W   W2        1.0  0.01884  0.61341  0.34127  1.0000
+  Li  Li3       1.0  0.99756  0.78638  0.15982  1.0000

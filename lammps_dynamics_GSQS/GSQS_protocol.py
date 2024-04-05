@@ -24,7 +24,7 @@ import random
 
 data_path="./StructureDump"
 cross_weight=-0.001 #Entropy wrt mean of configuration. min/max just flip this sign (pos being minimize).
-self_weight=100. #Entropy within each atomic configuration. min/max just flip this sign (pos being minimize). 
+self_weight=-1. #Entropy within each atomic configuration. min/max just flip this sign (pos being minimize). 
 n_descs=11
 n_totconfig=1
 #mask=[0,1,2,3,4]
@@ -33,9 +33,23 @@ mask = list(range(n_descs))
 target=vnp.zeros((len(mask)))
 rho0=4/(3.524**3) #set a reference density
 #n_atoms=random.randint(100,400)
-n_atoms=32
+target_comps = {'Cr':1.0}
+template_strct = 'starting.cif'
+template_ats = read(template_strct)
+template_ats.rattle(0.05)
+n_atoms = len(template_ats)
+#run_temp = True
+box_rlx = False
+run_temp = False
+fire_min = False
+line_min = True
+if not fire_min and box_rlx:
+    min_typ_global = 'box'
+else:
+    min_typ_global = 'min'
 
 descriptors_target_1 = np.load('target_descriptors.npy')
+descriptors_target_2 = np.load('target_var_descriptors.npy')
 
 class EntropyModel:
     def __init__(self, n_elements, n_descriptors_tot, mask):
@@ -87,17 +101,50 @@ class EntropyModel:
         #print("WHITENING: ", self.whitening)
         #self.last_update=list(dt)
         #mean and whitening can be sent to other processes
+        """
+        b = d.copy()
+        ener=self.V(b)
+        #print(ener,self.K_self,self.K_cross)
+        energy[:]=0
+        energy[0]=ener
+        b=self.V_grad(b)
+        if not np.all(np.isfinite(b)):
+            print("GRAD ERROR!")
+
+        #print(b)
+        beta[:,:]=0
+        beta[:,self.mask]=b
+        """
         self.set_mode_run()
 
-    def first_moment(self, descriptors):
+    def first_moment(self, descriptors,fac=0.0):
         n_atoms=descriptors.shape[0]
         n_descriptors=descriptors.shape[1]
         avgs = np.average(descriptors,axis=0)
-        abs_diffs_1 = [np.abs(ii - kk) for ii,kk in zip(avgs, descriptors_target_1)]
+        abs_diffs_1 = np.abs(avgs - descriptors_target_1)#[np.abs(ii - kk) for ii,kk in zip(avgs, descriptors_target_1)]
         abs_diffs_1 = np.array(abs_diffs_1)
-        tst_residual_1 = np.sum(abs_diffs_1)
+        abs_diffs_1 = np.nan_to_num(abs_diffs_1)
+        is_zero = np.isclose(abs_diffs_1,np.zeros(abs_diffs_1.shape))
+        is_zero = np.array(is_zero,dtype=int)
+        bonus=-np.sum(is_zero*fac)
+        tst_residual_1 = np.sum(abs_diffs_1) +bonus
         print (tst_residual_1)
         return tst_residual_1
+
+    def second_moment(self, descriptors,fac=0.0):
+        n_atoms=descriptors.shape[0]
+        n_descriptors=descriptors.shape[1]
+        vrs = np.var(descriptors,axis=0)
+        abs_diffs_2 = np.abs(vrs - descriptors_target_2)#[np.abs(ii - kk) for ii,kk in zip(avgs, descriptors_target_1)]
+        abs_diffs_2 = np.array(abs_diffs_2)
+        abs_diffs_2 = np.nan_to_num(abs_diffs_2)
+        is_zero = np.isclose(abs_diffs_2,np.zeros(abs_diffs_2.shape))
+        is_zero = np.array(is_zero,dtype=int)
+        bonus=-np.sum(is_zero*fac)
+        tst_residual_2 = np.sum(abs_diffs_2) +bonus
+        print (tst_residual_2)
+        return tst_residual_2
+
 
     @partial(jit, static_argnums=(0,1))
     def density(self,i,wd,wdh):
@@ -109,8 +156,9 @@ class EntropyModel:
         return rho
 
     @partial(jit, static_argnums=(0))
-    def V(self,descriptors):
-        return self.first_moment(descriptors)
+    def V(self,descriptors,weights=[1.0,0.0]):
+        vi = ((weights[0]*self.first_moment(descriptors)) + (weights[1]*self.second_moment(descriptors)))
+        return self.K_self*vi
 
     def __call__(self, elems, descriptors, beta, energy):
         self.last_descriptors=descriptors.copy()
@@ -139,6 +187,7 @@ class EntropyModel:
         if self.mode=="update":
             b=descriptors[:,self.mask]
             self.update(b)
+            #self.V(b)
 
 class EntropySampler:
     def __init__(self, model, before_loading_init):
@@ -196,39 +245,6 @@ class EntropySampler:
         else:
             self.lmp.commands_string(cmd)
 
-generate=\
-"""
-units           metal
-boundary        p p p
-
-#lattice         fcc 3.524
-#region          myreg block 0 2 0 2 0 2
-#create_box      1 myreg
-#create_atoms    1 box
-#displace_atoms  all random 0.1 0.1 0.1 123456
-
-
-read_data  {}
-
-log log_{}.lammps
-mass 1 58.6934
-
-
-pair_style hybrid/scaled {} soft 2.0 1.0 LATER mliap model mliappy LATER descriptor pace coupling_coefficients.yace 1 0
-
-pair_coeff * * soft 100
-pair_coeff * * mliap Ni
-
-
-#variable prefactor equal ramp(0,100)
-#fix 1 all adapt 1 pair soft a * * v_prefactor
-
-thermo 10
-fix nve all nve
-fix lan all langevin 5000 100 1.0 48279
-
-velocity all create 10000 4928459 dist gaussian
-"""
 try:
     shutil.rmtree(data_path)
 except:
@@ -242,7 +258,9 @@ activate_mliappy(lmpi)
 em=EntropyModel(1,n_descs,mask=mask)
 #bootstrap the model
 #g=gen_random(0)
-g=internal_generate_cell(0)
+#g=internal_generate_cell(0)
+#g= internal_generate_cell(0,template=read(template_strct),desired_comps=target_comps)
+g= internal_generate_cell(0,template=template_ats,desired_comps=target_comps,use_template=template_ats,min_typ=min_typ_global)
 """
 from ase.build import bulk
 template = bulk('Ni',cubic=True)*(1,2,2)
@@ -263,9 +281,13 @@ i=1
 while i <= n_totconfig:
     #rho=rho0
     print(i,"/",n_totconfig,"Using indicies :",mask)
-    rho=random.uniform(0.5*rho0,1.5*rho0)
-    n_atoms=random.randint(5,50)
-    g = internal_generate_cell(i)
+    #rho=random.uniform(0.5*rho0,1.5*rho0)
+    #n_atoms=random.randint(5,50)
+    #g = internal_generate_cell(i,template=read(template_strct),desired_comps=target_comps)
+    #g = internal_generate_cell(i,template=template_ats,desired_comps=target_comps,min_typ='min')#,use_template=template_ats)
+    #g = internal_generate_cell(i,template=template_ats,desired_comps=target_comps,min_typ='min',use_template=template_ats)
+    g = internal_generate_cell(i,template=template_ats,desired_comps=target_comps,min_typ=min_typ_global)
+    #g = internal_generate_cell(i)
     #g=gen_random(i)
     #g = starting_generation(1,all_species,cellg,typ='ase')[0]
     sampler=EntropySampler(em,g)
@@ -274,10 +296,22 @@ while i <= n_totconfig:
     em.K_self=self_weight #to minimize/maximize just flip this sign (negative being maximize). Entropy within each atomic configuration.
     #em.K_self=-0.
     #sampler.run("minimize 1e-2 1e-2 1000 1000")
-    #sampler.run("run 10000")
+    if run_temp:
+        sampler.run("run 1000")
 #     sampler.run("compute b all sna/atom 4.1 0.99363 8 1.0 0.50 bzeroflag 0")
 #     sampler.run("write_dump all custom %s/sample.bi_spectrum.%i.dump id type x y z c_bisp[*]" % (data_path,i) )
-    sampler.run("minimize 1e-8 1e-8 1000 1000")
+    if fire_min:
+        
+        sampler.run("min_style  fire")
+        sampler.run("""min_modify integrator eulerexplicit tmax 10.0 tmin 0.0 delaystep 5 dtgrow 1.1 dtshrink 0.5 alpha0 0.1 alphashrink 0.99 vdfmax 100000 halfstepback no initialdelay no""")
+    if line_min:
+        sampler.run("min_style  cg")
+        #sampler.run("min_modify  dmax 0.1 line quadratic")
+        #sampler.run("min_modify  dmax 1.0 line quadratic")
+        sampler.run("min_modify  dmax 3.0 line quadratic")
+
+
+    sampler.run("minimize 1e-12 1e-12 10000 100000")
     sampler.run("write_data %s/sample.%i.dat " % (data_path,i) )
     #em.K_cross*=-1. #Entropy within the database.
     #em.K_self*=-1. #to minimize/maximize just flip this sign (negative being maximize). Entropy within each atomic configuration.
