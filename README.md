@@ -9,9 +9,11 @@ You must add the fitsnap folder to your PYTHONPATH in order to use
 the ACE descriptor setup functionalities. Otherwise, you must bring your own
 ACE descriptor file (.yace).
 
-Add the `/path/to/StructureGeneration/lib` folder to your PYTHONPATH
+Add the `/path/to/Structure_Generation/lib` folder to your PYTHONPATH
 
-`export PYTHONPATH=$PYTHONPATH:/path/to/StructureGeneration/lib`
+`export PYTHONPATH=$PYTHONPATH:/path/to/Structure_Generation/lib`
+
+*NOTE fitsnap must also be in your pythonpath*
 
 ## Parent folder contents
 
