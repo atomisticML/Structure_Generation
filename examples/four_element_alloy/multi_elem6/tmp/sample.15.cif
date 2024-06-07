@@ -1,0 +1,51 @@
+data_image0
+_chemical_formula_structural       SiCr6FeCr7SiCrSiFeSiCrVCr4
+_chemical_formula_sum              "Si4 Cr19 Fe2 V1"
+_cell_length_a       2.28586
+_cell_length_b       2.28586
+_cell_length_c       95.241
+_cell_angle_alpha    58.1284
+_cell_angle_beta     54.829
+_cell_angle_gamma    90
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Si  Si1       1.0  0.66308  0.50252  0.08164  1.0000
+  Cr  Cr1       1.0  0.71476  0.62102  0.04252  1.0000
+  Cr  Cr2       1.0  0.96584  0.78602  0.01141  1.0000
+  Cr  Cr3       1.0  0.44045  0.35438  0.11175  1.0000
+  Cr  Cr4       1.0  0.19235  0.18168  0.14272  1.0000
+  Cr  Cr5       1.0  0.95113  0.02990  0.17320  1.0000
+  Cr  Cr6       1.0  0.64042  0.92162  0.20636  1.0000
+  Fe  Fe1       1.0  0.32476  0.84746  0.23958  1.0000
+  Cr  Cr7       1.0  0.80701  0.61783  0.27353  1.0000
+  Cr  Cr8       1.0  0.38603  0.65697  0.31000  1.0000
+  Cr  Cr9       1.0  0.52011  0.87805  0.41907  1.0000
+  Cr  Cr10      1.0  0.33591  0.34425  0.37880  1.0000
+  Cr  Cr11      1.0  0.27153  0.70625  0.45026  1.0000
+  Cr  Cr12      1.0  0.78214  0.41947  0.53753  1.0000
+  Cr  Cr13      1.0  0.03962  0.61762  0.50591  1.0000
+  Si  Si2       1.0  0.31375  0.07417  0.59876  1.0000
+  Cr  Cr14      1.0  0.54401  0.24242  0.56829  1.0000
+  Si  Si3       1.0  0.38715  0.72892  0.63599  1.0000
+  Fe  Fe2       1.0  0.14792  0.55154  0.66681  1.0000
+  Si  Si4       1.0  0.86391  0.58883  0.73785  1.0000
+  Cr  Cr15      1.0  0.10193  0.76702  0.70706  1.0000
+  V   V1        1.0  0.59744  0.88801  0.81661  1.0000
+  Cr  Cr16      1.0  0.32068  0.66913  0.84847  1.0000
+  Cr  Cr17      1.0  0.86709  0.30106  0.88697  1.0000
+  Cr  Cr18      1.0  0.69916  0.31040  0.93693  1.0000
+  Cr  Cr19      1.0  0.02696  0.01057  0.97455  1.0000

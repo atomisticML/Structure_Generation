@@ -1,0 +1,53 @@
+data_image0
+_chemical_formula_structural       Fe2Cr6FeSiCr2Fe3Cr3FeCr2Fe5Cr2
+_chemical_formula_sum              "Fe12 Cr15 Si1"
+_cell_length_a       2.28586
+_cell_length_b       4.57172
+_cell_length_c       33.8276
+_cell_angle_alpha    61.7697
+_cell_angle_beta     61.7697
+_cell_angle_gamma    90
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Fe  Fe1       1.0  0.63060  0.60827  0.24382  1.0000
+  Fe  Fe2       1.0  0.22161  0.09810  0.23067  1.0000
+  Cr  Cr1       1.0  0.03491  0.80910  0.01325  1.0000
+  Cr  Cr2       1.0  0.32662  0.31730  0.01120  1.0000
+  Cr  Cr3       1.0  0.24237  0.18760  0.15787  1.0000
+  Cr  Cr4       1.0  0.68189  0.69819  0.16676  1.0000
+  Cr  Cr5       1.0  0.27479  0.26183  0.08439  1.0000
+  Cr  Cr6       1.0  0.73280  0.77611  0.09103  1.0000
+  Fe  Fe3       1.0  0.77437  0.93589  0.37032  1.0000
+  Si  Si1       1.0  0.96179  0.15143  0.41118  1.0000
+  Cr  Cr7       1.0  0.73663  0.09207  0.30008  1.0000
+  Cr  Cr8       1.0  0.02351  0.55499  0.32906  1.0000
+  Fe  Fe4       1.0  0.10865  0.21598  0.54332  1.0000
+  Fe  Fe5       1.0  0.02070  0.67120  0.48055  1.0000
+  Fe  Fe6       1.0  0.86797  0.48818  0.43604  1.0000
+  Cr  Cr9       1.0  0.91773  0.00259  0.50376  1.0000
+  Cr  Cr10      1.0  0.16541  0.79185  0.60586  1.0000
+  Cr  Cr11      1.0  0.30589  0.41919  0.58522  1.0000
+  Fe  Fe7       1.0  0.27767  0.87817  0.65998  1.0000
+  Cr  Cr12      1.0  0.25829  0.32349  0.66285  1.0000
+  Cr  Cr13      1.0  0.30526  0.32760  0.79607  1.0000
+  Fe  Fe8       1.0  0.32052  0.36338  0.72538  1.0000
+  Fe  Fe9       1.0  0.26604  0.83619  0.73097  1.0000
+  Fe  Fe10      1.0  0.27478  0.82968  0.79706  1.0000
+  Fe  Fe11      1.0  0.32832  0.82000  0.86649  1.0000
+  Fe  Fe12      1.0  0.09362  0.27592  0.94018  1.0000
+  Cr  Cr14      1.0  0.21748  0.31645  0.86672  1.0000
+  Cr  Cr15      1.0  0.34261  0.78324  0.93848  1.0000

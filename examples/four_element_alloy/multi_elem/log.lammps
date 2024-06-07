@@ -1,0 +1,17 @@
+LAMMPS (7 Feb 2024 - Development - 857298b639-modified)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+
+units           metal
+boundary        p p p
+
+read_data  ats_9.data
+Reading data file ...
+  triclinic box = (0 0 0) to (2.2858575 4.571715 36.57372) with tilt (0 32.002005 6.8575725)
+WARNING: Triclinic box skew is large. LAMMPS will run inefficiently. (src/domain.cpp:219)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  88 atoms
+  read_data CPU = 0.010 seconds
+
+log log_9.lammps

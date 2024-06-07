@@ -1,0 +1,132 @@
+mass 1 51.9961
+
+
+pair_style hybrid/overlay soft 2.0 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+Loading python model deferred.
+pair_coeff * * soft 100
+pair_coeff * * mliap Cr
+
+#variable prefactor equal ramp(0,100)
+#fix 1 all adapt 1 pair soft a * * v_prefactor
+
+thermo 10
+fix nve all nve
+fix lan all langevin 5000 100 1.0 48279
+
+velocity all create 10000 4928459 dist gaussian
+
+Loading python model complete.
+minimize 1e-8 1e-8 1000 1000
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 13.209389
+  ghost atom cutoff = 13.209389
+  binsize = 6.6046944, bins = 1 1 1
+  2 neighbor lists, perpetual/occasional/extra = 2 0 0
+  (1) pair soft, perpetual, half/full trim from (2)
+      attributes: half, newton on, cut 4
+      pair build: halffull/trim/newton/tri
+      stencil: none
+      bin: none
+  (2) pair mliap, perpetual
+      attributes: full, newton on
+      pair build: full/bin/atomonly
+      stencil: full/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 4.903 | 4.903 | 4.903 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   10000          14.663017      0              19.833423      615580.73    
+        10   10000          0.91201293     0              6.0824187      95787.483    
+        20   10000          0.55876744     0              5.7291732      78369.437    
+        30   10000          0.49803715     0              5.6684429      81903.653    
+        40   10000          0.48134898     0              5.6517548      80691.821    
+        50   10000          0.46511674     0              5.6355225      82333.533    
+        60   10000          0.45720559     0              5.6276114      80460.337    
+        70   10000          0.44616953     0              5.6165753      80300.88     
+        80   10000          0.41040823     0              5.580814       79166.572    
+        90   10000          0.39077843     0              5.5611842      79041.842    
+       100   10000          0.38021122     0              5.550617       80461.842    
+       110   10000          0.37511782     0              5.5455236      78522.455    
+       120   10000          0.36364371     0              5.5340495      76963.663    
+       130   10000          0.36185434     0              5.5322601      78004.121    
+       140   10000          0.35928029     0              5.5296861      78275.313    
+       150   10000          0.35817987     0              5.5285857      79180.352    
+       160   10000          0.35487849     0              5.5252843      78863.88     
+       170   10000          0.35468541     0              5.5250912      77286.112    
+       175   10000          0.35461846     0              5.5250243      79079.806    
+Loop time of 6.85158 on 1 procs for 175 steps with 5 atoms
+
+98.0% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+      14.6630173613224  0.354618461923131  0.354618461923131
+  Force two-norm initial, final = 80.122471 0.025065807
+  Force max component initial, final = 35.834921 0.013282288
+  Final line search alpha, max atom move = 1.5258789e-05 2.0267163e-07
+  Iterations, force evaluations = 175 567
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 6.8463     | 6.8463     | 6.8463     |   0.0 | 99.92
+Neigh   | 4.7889e-05 | 4.7889e-05 | 4.7889e-05 |   0.0 |  0.00
+Comm    | 0.0031096  | 0.0031096  | 0.0031096  |   0.0 |  0.05
+Output  | 0.00022273 | 0.00022273 | 0.00022273 |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 0.001871   |            |       |  0.03
+
+Nlocal:              5 ave           5 max           5 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:           1170 ave        1170 max        1170 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:             26 ave          26 max          26 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:         1884 ave        1884 max        1884 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 1884
+Ave neighs/atom = 376.8
+Neighbor list builds = 1
+Dangerous builds = 0
+write_data ./StructureDump/sample.10.dat 
+System init for write_data ...
+variable etot equal etotal
+variable ptot equal press
+variable pairp equal epair
+variable numat equal atoms
+run 0
+Per MPI rank memory allocation (min/avg/max) = 3.779 | 3.779 | 3.779 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+       175   10000          0.35461846     0              5.5250243      78427.518    
+Loop time of 2.0341e-05 on 1 procs for 0 steps with 5 atoms
+
+63.9% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 2.034e-05  |            |       |100.00
+
+Nlocal:              5 ave           5 max           5 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:           1175 ave        1175 max        1175 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:             28 ave          28 max          28 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:         1884 ave        1884 max        1884 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 1884
+Ave neighs/atom = 376.8
+Neighbor list builds = 0
+Dangerous builds = 0
+print "${etot} ${pairp} ${ptot} ${numat} " append Summary.dat screen no
+Total wall time: 0:00:06

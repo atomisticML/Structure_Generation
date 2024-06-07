@@ -1,0 +1,114 @@
+mass 1 50.941500
+mass 2 51.996100
+mass 3 55.845000
+pair_style hybrid/overlay soft 2.448 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+Loading python model deferred.
+pair_coeff * * soft 100.000000
+pair_coeff * * mliap   V Cr Fe
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+Loading python model complete.
+min_style  cg
+min_modify  dmax 0.05 line quadratic
+minimize 1e-6 1e-6 1000 10000
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 11.52
+  ghost atom cutoff = 11.52
+  binsize = 5.7600002, bins = 13 5 14
+  2 neighbor lists, perpetual/occasional/extra = 2 0 0
+  (1) pair soft, perpetual, half/full trim from (2)
+      attributes: half, newton on, cut 4.448
+      pair build: halffull/trim/newton/tri
+      stencil: none
+      bin: none
+  (2) pair mliap, perpetual
+      attributes: full, newton on
+      pair build: full/bin/atomonly
+      stencil: full/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 6.862 | 6.862 | 6.862 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   0.0001         968.23443      0              968.23443      11807953     
+        10   0.0001         248.02508      0              248.02508      9222914.6    
+        20   0.0001         2.2325299      0              2.2325303      6934063.7    
+        30   0.0001        -68.577145      0             -68.577145      5359116.6    
+        37   0.0001        -77.303134      0             -77.303134      4884088.8    
+Loop time of 9.42802 on 1 procs for 37 steps with 34 atoms
+
+99.6% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+Minimization stats:
+  Stopping criterion = linesearch alpha is zero
+  Energy initial, next-to-last, final = 
+      968.234432824384  -77.3031342581363  -77.3031342581363
+  Force two-norm initial, final = 641.74723 27.356456
+  Force max component initial, final = 247.37866 11.672957
+  Final line search alpha, max atom move = 1.5956926e-11 1.8626451e-10
+  Iterations, force evaluations = 37 102
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 9.4236     | 9.4236     | 9.4236     |   0.0 | 99.95
+Neigh   | 0.00047999 | 0.00047999 | 0.00047999 |   0.0 |  0.01
+Comm    | 0.0031944  | 0.0031944  | 0.0031944  |   0.0 |  0.03
+Output  | 4.6768e-05 | 4.6768e-05 | 4.6768e-05 |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 0.000711   |            |       |  0.01
+
+Nlocal:             34 ave          34 max          34 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:           7205 ave        7205 max        7205 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:            508 ave         508 max         508 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:        17882 ave       17882 max       17882 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 17882
+Ave neighs/atom = 525.94118
+Neighbor list builds = 1
+Dangerous builds = 0
+write_data ./StructureDump/sample.29.dat 
+System init for write_data ...
+variable etot equal etotal
+variable ptot equal press
+variable pairp equal epair
+variable numat equal atoms
+run 0
+WARNING: No fixes with time integration, atoms won't move (src/verlet.cpp:60)
+Per MPI rank memory allocation (min/avg/max) = 5.737 | 5.737 | 5.737 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+        37   0.0001        -77.303134      0             -77.303134      4904400.3    
+Loop time of 1.8178e-05 on 1 procs for 0 steps with 34 atoms
+
+115.5% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 1.818e-05  |            |       |100.00
+
+Nlocal:             34 ave          34 max          34 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:           7206 ave        7206 max        7206 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:            504 ave         504 max         504 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:        17848 ave       17848 max       17848 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 17848
+Ave neighs/atom = 524.94118
+Neighbor list builds = 0
+Dangerous builds = 0
+print "${etot} ${pairp} ${ptot} ${numat} " append Summary.dat screen no
+Total wall time: 0:00:10

@@ -1,0 +1,44 @@
+Ignoring PCI device with non-16bit domain.
+Pass --enable-32bits-pci-domain to configure to support such devices
+(warning: it would break the library ABI, don't enable unless really needed).
+for structure of size:8 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+8 8
+model <__main__.EntropyModel object at 0x7fc9cb7a1420>
+
+units           metal
+boundary        p p p
+
+read_data  ats_0.data
+
+log log_0.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 0.5 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 0.5
+pair_coeff * * mliap   Cr
+
+thermo 10
+fix 1b all box/relax iso 0.0 vmax 0.001
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7fc9cb7a1420> <__main__.EntropyModel object at 0x7fc9cb7a1420>
+after sampler
+1 / 1 Using indicies : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for structure of size:8 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+8 8
+
+units           metal
+boundary        p p p
+
+read_data  ats_1.data
+
+log log_1.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 0.5 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 0.5
+pair_coeff * * mliap   Cr
+
+thermo 10
+fix 1b all box/relax iso 0.0 vmax 0.001
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7fc9cb7a1420> <__main__.EntropyModel object at 0x7fc9cb7a1420>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=1/0)>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=1/0)>

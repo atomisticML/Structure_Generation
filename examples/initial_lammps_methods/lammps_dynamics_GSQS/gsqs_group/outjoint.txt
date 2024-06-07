@@ -1,0 +1,214 @@
+Ignoring PCI device with non-16bit domain.
+Pass --enable-32bits-pci-domain to configure to support such devices
+(warning: it would break the library ABI, don't enable unless really needed).
+for structure of size:4 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+4 4
+model <__main__.EntropyModel object at 0x7f870b429780>
+
+units           metal
+boundary        p p p
+
+read_data  ats_0.data
+
+log log_0.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 1.650 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 100.0
+pair_coeff * * mliap   Cr
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7f870b429780> <__main__.EntropyModel object at 0x7f870b429780>
+after sampler
+1 / 10 Using indicies : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for structure of size:9 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+9 9
+
+units           metal
+boundary        p p p
+
+read_data  ats_1.data
+
+log log_1.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 1.650 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 100.0
+pair_coeff * * mliap   Cr
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7f870b429780> <__main__.EntropyModel object at 0x7f870b429780>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=2/0)>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=2/0)>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=2/0)>
+2 / 10 Using indicies : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for structure of size:6 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+6 6
+
+units           metal
+boundary        p p p
+
+read_data  ats_2.data
+
+log log_2.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 1.650 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 100.0
+pair_coeff * * mliap   Cr
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7f870b429780> <__main__.EntropyModel object at 0x7f870b429780>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=2/0)>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=2/0)>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=2/0)>
+3 / 10 Using indicies : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for structure of size:9 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+9 9
+
+units           metal
+boundary        p p p
+
+read_data  ats_3.data
+
+log log_3.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 1.650 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 100.0
+pair_coeff * * mliap   Cr
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7f870b429780> <__main__.EntropyModel object at 0x7f870b429780>
+4 / 10 Using indicies : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for structure of size:6 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+6 6
+
+units           metal
+boundary        p p p
+
+read_data  ats_4.data
+
+log log_4.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 1.650 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 100.0
+pair_coeff * * mliap   Cr
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7f870b429780> <__main__.EntropyModel object at 0x7f870b429780>
+5 / 10 Using indicies : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for structure of size:7 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+7 7
+
+units           metal
+boundary        p p p
+
+read_data  ats_5.data
+
+log log_5.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 1.650 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 100.0
+pair_coeff * * mliap   Cr
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7f870b429780> <__main__.EntropyModel object at 0x7f870b429780>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=2/0)>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=2/0)>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=2/0)>
+6 / 10 Using indicies : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for structure of size:8 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+8 8
+
+units           metal
+boundary        p p p
+
+read_data  ats_6.data
+
+log log_6.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 1.650 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 100.0
+pair_coeff * * mliap   Cr
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7f870b429780> <__main__.EntropyModel object at 0x7f870b429780>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=2/0)>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=2/0)>
+Traced<ShapedArray(float32[])>with<DynamicJaxprTrace(level=2/0)>
+7 / 10 Using indicies : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for structure of size:9 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+9 9
+
+units           metal
+boundary        p p p
+
+read_data  ats_7.data
+
+log log_7.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 1.650 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 100.0
+pair_coeff * * mliap   Cr
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7f870b429780> <__main__.EntropyModel object at 0x7f870b429780>
+8 / 10 Using indicies : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for structure of size:8 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+8 8
+
+units           metal
+boundary        p p p
+
+read_data  ats_8.data
+
+log log_8.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 1.650 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 100.0
+pair_coeff * * mliap   Cr
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7f870b429780> <__main__.EntropyModel object at 0x7f870b429780>
+9 / 10 Using indicies : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for structure of size:9 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+9 9
+
+units           metal
+boundary        p p p
+
+read_data  ats_9.data
+
+log log_9.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 1.650 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 100.0
+pair_coeff * * mliap   Cr
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7f870b429780> <__main__.EntropyModel object at 0x7f870b429780>
+10 / 10 Using indicies : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for structure of size:6 desired compositions: {'Cr': 1.0} will be replaced with {'Cr': 1.0}
+6 6
+
+units           metal
+boundary        p p p
+
+read_data  ats_10.data
+
+log log_10.lammps
+mass 1 51.996100
+pair_style hybrid/overlay soft 1.650 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+pair_coeff * * soft 100.0
+pair_coeff * * mliap   Cr
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+<__main__.EntropyModel object at 0x7f870b429780> <__main__.EntropyModel object at 0x7f870b429780>

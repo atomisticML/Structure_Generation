@@ -1,0 +1,36 @@
+data_image0
+_chemical_formula_structural       Cr11
+_chemical_formula_sum              "Cr11"
+_cell_length_a       7.42237
+_cell_length_b       5.52208
+_cell_length_c       6.18192
+_cell_angle_alpha    90
+_cell_angle_beta     90
+_cell_angle_gamma    90
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Cr  Cr1       1.0  0.38889  0.22946  0.05688  1.0000
+  Cr  Cr2       1.0  0.20776  0.55031  0.71517  1.0000
+  Cr  Cr3       1.0  0.21793  0.00281  0.30427  1.0000
+  Cr  Cr4       1.0  0.10606  0.99890  0.71346  1.0000
+  Cr  Cr5       1.0  0.89947  0.24000  0.32068  1.0000
+  Cr  Cr6       1.0  0.07971  0.55274  0.11713  1.0000
+  Cr  Cr7       1.0  0.51065  0.76017  0.72249  1.0000
+  Cr  Cr8       1.0  0.63108  0.40726  0.41351  1.0000
+  Cr  Cr9       1.0  0.85475  0.90662  0.04218  1.0000
+  Cr  Cr10      1.0  0.58761  0.88513  0.26555  1.0000
+  Cr  Cr11      1.0  0.64020  0.18153  0.80299  1.0000

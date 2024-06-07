@@ -1,0 +1,40 @@
+data_image0
+_chemical_formula_structural       SiCr4Fe3Cr7
+_chemical_formula_sum              "Si1 Cr11 Fe3"
+_cell_length_a       11.4293
+_cell_length_b       2.28586
+_cell_length_c       7.22852
+_cell_angle_alpha    90
+_cell_angle_beta     71.5651
+_cell_angle_gamma    90
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Si  Si1       1.0  0.01701  0.60703  0.05431  1.0000
+  Cr  Cr1       1.0  0.25425  0.80660  0.34965  1.0000
+  Cr  Cr2       1.0  0.19374  0.02354  0.04504  1.0000
+  Cr  Cr3       1.0  0.03963  0.09218  0.35417  1.0000
+  Cr  Cr4       1.0  0.18802  0.77858  0.75526  1.0000
+  Fe  Fe1       1.0  0.43135  0.35289  0.23227  1.0000
+  Fe  Fe2       1.0  0.45115  0.83600  0.58273  1.0000
+  Fe  Fe3       1.0  0.36813  0.52330  0.95946  1.0000
+  Cr  Cr5       1.0  0.95423  0.62667  0.72770  1.0000
+  Cr  Cr6       1.0  0.84257  0.09395  0.07800  1.0000
+  Cr  Cr7       1.0  0.56343  0.17270  0.81015  1.0000
+  Cr  Cr8       1.0  0.64228  0.42290  0.44589  1.0000
+  Cr  Cr9       1.0  0.84521  0.30026  0.38012  1.0000
+  Cr  Cr10      1.0  0.76604  0.16422  0.83243  1.0000
+  Cr  Cr11      1.0  0.61501  0.66752  0.03554  1.0000

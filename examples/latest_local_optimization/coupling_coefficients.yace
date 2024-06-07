@@ -1,0 +1,30 @@
+elements: [Cr, Fe, Si, V] 
+E0: [0.000000, 0.000000, 0.000000, 0.000000] 
+deltaSplineBins: 0.001000 
+embeddings:
+  0: {ndensity: 1, FS_parameters: [1.0, 1.0], npoti: FinnisSinclair, rho_core_cutoff: 100000, drho_core_cutoff: 250}
+  1: {ndensity: 1, FS_parameters: [1.0, 1.0], npoti: FinnisSinclair, rho_core_cutoff: 100000, drho_core_cutoff: 250}
+  2: {ndensity: 1, FS_parameters: [1.0, 1.0], npoti: FinnisSinclair, rho_core_cutoff: 100000, drho_core_cutoff: 250}
+  3: {ndensity: 1, FS_parameters: [1.0, 1.0], npoti: FinnisSinclair, rho_core_cutoff: 100000, drho_core_cutoff: 250}
+bonds:
+  [0, 0]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.238], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.238, rcut: 4.76, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [0, 1]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.238], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.238, rcut: 4.76, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [0, 2]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.238], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.238, rcut: 4.75, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [0, 3]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.234], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.234, rcut: 4.675, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [1, 0]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.238], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.238, rcut: 4.76, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [1, 1]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.238], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.238, rcut: 4.76, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [1, 2]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.238], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.238, rcut: 4.75, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [1, 3]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.234], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.234, rcut: 4.675, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [2, 0]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.238], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.238, rcut: 4.75, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [2, 1]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.238], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.238, rcut: 4.75, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [2, 2]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.27], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.27, rcut: 5.4, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [2, 3]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.245], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.245, rcut: 4.9, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [3, 0]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.234], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.234, rcut: 4.675, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [3, 1]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.234], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.234, rcut: 4.675, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [3, 2]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.245], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.245, rcut: 4.9, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+  [3, 3]: {nradmax: 3, lmax: 2, nradbasemax: 3, radbasename: ChebExpCos, radparameters: [0.23], radcoefficients: [[[1, 0, 0], [1, 0, 0], [1, 0, 0]], [[0, 1, 0], [0, 1, 0], [0, 1, 0]], [[0, 0, 1], [0, 0, 1], [0, 0, 1]]], prehc: 0, lambdahc: 0.23, rcut: 4.59, dcut: 0.01, rcut_in: 0.0, dcut_in: 0.0, inner_cutoff_type: distance}
+functions:
+  0:
+  1:
+  2:
+  3:

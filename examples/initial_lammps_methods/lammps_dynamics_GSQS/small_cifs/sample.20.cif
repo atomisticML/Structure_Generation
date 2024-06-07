@@ -1,0 +1,30 @@
+data_image0
+_chemical_formula_structural       Cr5
+_chemical_formula_sum              "Cr5"
+_cell_length_a       5.88612
+_cell_length_b       5.12308
+_cell_length_c       6.20332
+_cell_angle_alpha    90
+_cell_angle_beta     90
+_cell_angle_gamma    90
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Cr  Cr1       1.0  0.75462  0.81619  0.84323  1.0000
+  Cr  Cr2       1.0  0.44741  0.29472  0.01079  1.0000
+  Cr  Cr3       1.0  0.07277  0.51682  0.50922  1.0000
+  Cr  Cr4       1.0  0.21721  0.69572  0.85349  1.0000
+  Cr  Cr5       1.0  0.54383  0.12920  0.45789  1.0000

@@ -1,0 +1,39 @@
+data_image0
+_chemical_formula_structural       Si2Fe6Cr6
+_chemical_formula_sum              "Si2 Fe6 Cr6"
+_cell_length_a       2.28586
+_cell_length_b       6.85757
+_cell_length_c       9.14343
+_cell_angle_alpha    90
+_cell_angle_beta     90
+_cell_angle_gamma    90
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Si  Si1       1.0  0.88883  0.63906  0.23611  1.0000
+  Si  Si2       1.0  0.95930  0.37195  0.80124  1.0000
+  Fe  Fe1       1.0  0.34643  0.41518  0.35487  1.0000
+  Fe  Fe2       1.0  0.89384  0.15937  0.47510  1.0000
+  Fe  Fe3       1.0  0.40420  0.90197  0.37313  1.0000
+  Fe  Fe4       1.0  0.44685  0.41457  0.59220  1.0000
+  Fe  Fe5       1.0  0.66703  0.90545  0.13484  1.0000
+  Fe  Fe6       1.0  0.43032  0.07059  0.69726  1.0000
+  Cr  Cr1       1.0  0.92495  0.69041  0.51806  1.0000
+  Cr  Cr2       1.0  0.25481  0.16861  0.21780  1.0000
+  Cr  Cr3       1.0  0.44193  0.32995  0.01634  1.0000
+  Cr  Cr4       1.0  0.30776  0.72965  0.75746  1.0000
+  Cr  Cr5       1.0  0.81075  0.64958  0.97924  1.0000
+  Cr  Cr6       1.0  0.96936  0.02460  0.92351  1.0000

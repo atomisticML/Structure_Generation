@@ -1,0 +1,54 @@
+data_image0
+_chemical_formula_structural       Fe2Cr2Fe3Cr2FeCr2FeCrFeCr5SiCr2SiCrFeCr3
+_chemical_formula_sum              "Fe9 Cr18 Si2"
+_cell_length_a       2.28586
+_cell_length_b       2.28586
+_cell_length_c       70.1576
+_cell_angle_alpha    64.9403
+_cell_angle_beta     56.3657
+_cell_angle_gamma    90
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Fe  Fe1       1.0  0.26634  0.03300  0.02645  1.0000
+  Fe  Fe2       1.0  0.69267  0.77325  0.12965  1.0000
+  Cr  Cr1       1.0  0.96560  0.70951  0.09602  1.0000
+  Cr  Cr2       1.0  0.20306  0.07344  0.05919  1.0000
+  Fe  Fe3       1.0  0.44247  0.36069  0.16495  1.0000
+  Fe  Fe4       1.0  0.61595  0.63000  0.25915  1.0000
+  Fe  Fe5       1.0  0.50530  0.39804  0.19615  1.0000
+  Cr  Cr3       1.0  0.57261  0.70872  0.29162  1.0000
+  Cr  Cr4       1.0  0.57673  0.50510  0.22741  1.0000
+  Fe  Fe6       1.0  0.44776  0.71668  0.32466  1.0000
+  Cr  Cr5       1.0  0.35605  0.74748  0.35816  1.0000
+  Cr  Cr6       1.0  0.48296  0.72656  0.39615  1.0000
+  Fe  Fe7       1.0  0.42760  0.81416  0.42966  1.0000
+  Cr  Cr7       1.0  0.37153  0.92457  0.46265  1.0000
+  Fe  Fe8       1.0  0.01164  0.06565  0.49810  1.0000
+  Cr  Cr8       1.0  0.00686  0.48109  0.55855  1.0000
+  Cr  Cr9       1.0  0.02291  0.27643  0.52895  1.0000
+  Cr  Cr10      1.0  0.83448  0.81954  0.58660  1.0000
+  Cr  Cr11      1.0  0.90130  0.07895  0.61482  1.0000
+  Cr  Cr12      1.0  0.93639  0.26353  0.64485  1.0000
+  Si  Si1       1.0  0.92436  0.38642  0.67663  1.0000
+  Cr  Cr13      1.0  0.10914  0.74760  0.71738  1.0000
+  Cr  Cr14      1.0  0.12175  0.26336  0.75910  1.0000
+  Si  Si2       1.0  0.77397  0.89939  0.83480  1.0000
+  Cr  Cr15      1.0  0.90102  0.86770  0.79945  1.0000
+  Fe  Fe9       1.0  0.52311  0.49344  0.87568  1.0000
+  Cr  Cr16      1.0  0.35321  0.57567  0.91181  1.0000
+  Cr  Cr17      1.0  0.18125  0.41103  0.95004  1.0000
+  Cr  Cr18      1.0  0.34492  0.34061  0.98913  1.0000

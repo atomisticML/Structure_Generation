@@ -1,0 +1,184 @@
+mass 1 50.941500
+mass 2 28.085000
+mass 3 51.996100
+pair_style hybrid/overlay soft 2.448 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+Loading python model deferred.
+pair_coeff * * soft 1000.000000
+pair_coeff * * mliap   V Si Cr
+
+thermo 10
+velocity all create 0.0001 4928459 dist gaussian
+Loading python model complete.
+min_style  fire
+min_modify integrator eulerexplicit tmax 10.0 tmin 0.0 delaystep 5 dtgrow 1.1 dtshrink 0.5 alpha0 0.1 alphashrink 0.99 vdfmax 100000 halfstepback no initialdelay no
+minimize 1e-6 1e-6 1000 10000
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 12.8
+  ghost atom cutoff = 12.8
+  binsize = 6.4000002, bins = 1 2 5
+  2 neighbor lists, perpetual/occasional/extra = 2 0 0
+  (1) pair soft, perpetual, half/full trim from (2)
+      attributes: half, newton on, cut 4.448
+      pair build: halffull/trim/newton/tri
+      stencil: none
+      bin: none
+  (2) pair mliap, perpetual
+      attributes: full, newton on
+      pair build: full/bin/atomonly
+      stencil: full/bin/3d
+      bin: standard
+  Parameters for fire:
+    dmax  delaystep dtgrow dtshrink alpha0 alphashrink tmax tmin   integrator   halfstepback   abcfire  
+     0.1      5      1.1     0.5     0.1      0.99      10   0   eulerexplicit       no          no     
+Per MPI rank memory allocation (min/avg/max) = 6.044 | 6.044 | 6.044 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+         0   0              20914.725      0              20914.725      1.8387689e+08
+        10   3145066.3      10171.424      0              21960.845      1.9411432e+08
+        20   1755798.9      6535.5027      0              13117.193      1.6132069e+08
+        30   889243.29      5200.7449      0              8534.1127      1.3395905e+08
+        40   858120.91      3695.0166      0              6911.7208      1.199618e+08 
+        50   9663695.6      1977.7673      0              38202.557      2.2370637e+08
+        60   209123.8       1410.7005      0              2194.6103      90653058     
+        70   38056.148      1106.0619      0              1248.717       85385412     
+        80   8105.595       1075.2204      0              1105.6046      84149817     
+        90   49765.14       930.40717      0              1116.954       79540946     
+       100   36736.067      756.37396      0              894.08073      68715869     
+       110   6687.964       729.5625       0              754.63263      66522764     
+       120   3428.9699      694.00161      0              706.85525      64440493     
+       130   200.5906       673.09236      0              673.84429      62820238     
+       140   362.32215      661.8073       0              663.16548      62249331     
+       150   2596.3253      653.17589      0              662.90833      61726211     
+       160   402.33821      623.38216      0              624.89034      59536004     
+       170   457.3072       619.40097      0              621.11521      59192092     
+       180   2711.7656      611.40924      0              621.57441      58411253     
+       190   1525.0471      600.62007      0              606.33678      55968762     
+       200   2772.259       576.68376      0              587.07569      54469188     
+       210   536.95026      575.4272       0              577.43999      54349346     
+       220   2135.1014      569.5556       0              577.55912      53521116     
+       230   7317.7448      553.68986      0              581.12075      51259283     
+       240   19.69543       552.36097      0              552.4348       50862045     
+       250   356.34966      551.14831      0              552.4841       50784677     
+       260   1718.8709      546.05434      0              552.4976       50117163     
+       270   34.453066      545.33817      0              545.46732      49903838     
+       280   408.92544      543.99008      0              545.52296      49740155     
+       290   3419.6949      535.32229      0              548.14116      48570478     
+       300   348.35433      532.9155       0              534.22133      48468622     
+       310   1424.4497      528.83556      0              534.17517      48432952     
+       320   60.53701       523.9333       0              524.16023      48213190     
+       330   694.33533      521.06417      0              523.66692      48113258     
+       340   7098.5592      490.40994      0              517.01921      47695529     
+       350   212.2672       488.4591       0              489.25479      47357288     
+       360   1195.9191      484.9125       0              489.39546      46908285     
+       370   66.214116      482.89163      0              483.13983      46506620     
+       380   19.248603      482.87623      0              482.94839      46435226     
+       390   152.22015      481.80475      0              482.37535      46347224     
+       400   859.26828      479.89321      0              483.11421      45596898     
+       410   103.72258      477.60939      0              477.9982       44866733     
+       420   23.925037      477.17292      0              477.2626       44813653     
+       430   125.05301      476.77477      0              477.24354      44695672     
+       440   982.13455      474.59351      0              478.27509      43775797     
+       450   26.926095      474.3423       0              474.44323      43712415     
+       460   190.11107      473.73667      0              474.44931      43434364     
+       470   669.60406      474.58761      0              477.09765      42923829     
+       480   5.1413162      474.03627      0              474.05555      42748169     
+       490   27.380554      473.9331       0              474.03574      42696812     
+       500   139.43566      473.67571      0              474.19839      42442572     
+       510   11.849347      473.47287      0              473.51729      42417469     
+       520   44.732171      473.352        0              473.51968      42361971     
+       530   11.934222      473.20794      0              473.25267      42244988     
+       540   5.5171639      473.89682      0              473.9175       42199161     
+       550   29.403481      473.81463      0              473.92485      42132484     
+       560   0.68861601     472.90672      0              472.9093       42066919     
+       570   12.027049      472.86683      0              472.91192      42036812     
+       580   84.693144      472.66098      0              472.97845      41841475     
+       590   18.851474      472.57071      0              472.64137      41826514     
+       600   1.9286538      472.56448      0              472.57171      41823790     
+       610   17.883597      472.50868      0              472.57572      41783246     
+       620   106.76553      473.10214      0              473.50235      41565972     
+       630   0.083359743    472.1343       0              472.13462      41515624     
+       640   3.4266525      472.12288      0              472.13573      41507117     
+       650   29.935594      472.02919      0              472.1414       41443750     
+       660   0.45886943     472.65768      0              472.6594       41307130     
+       670   0.97100372     471.82194      0              471.82558      41294869     
+       680   6.0807977      471.80244      0              471.82524      41285251     
+       690   52.616914      471.71663      0              471.91387      41236616     
+       700   5.759995       472.49557      0              472.51717      41236554     
+       701   5.4560703      472.49573      0              472.51618      41234021     
+Loop time of 268.968 on 1 procs for 701 steps with 30 atoms
+
+99.8% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+Minimization stats:
+  Stopping criterion = energy tolerance
+  Energy initial, next-to-last, final = 
+       20914.724522994   472.495574770993   472.495728812281
+  Force two-norm initial, final = 7664.7184 8.3809572
+  Force max component initial, final = 2702.1368 3.9082075
+  Final line search alpha, max atom move = 0 0
+  Iterations, force evaluations = 701 758
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 268.93     | 268.93     | 268.93     |   0.0 | 99.99
+Neigh   | 0.0026334  | 0.0026334  | 0.0026334  |   0.0 |  0.00
+Comm    | 0.021033   | 0.021033   | 0.021033   |   0.0 |  0.01
+Output  | 0.0017538  | 0.0017538  | 0.0017538  |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 0.008171   |            |       |  0.00
+
+Nlocal:             30 ave          30 max          30 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:           4610 ave        4610 max        4610 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:            548 ave         548 max         548 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:        21282 ave       21282 max       21282 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 21282
+Ave neighs/atom = 709.4
+Neighbor list builds = 5
+Dangerous builds = 0
+write_data ./StructureDump/sample.2.dat 
+System init for write_data ...
+variable etot equal etotal
+variable ptot equal press
+variable pairp equal epair
+variable numat equal atoms
+run 0
+WARNING: No fixes with time integration, atoms won't move (src/verlet.cpp:60)
+Per MPI rank memory allocation (min/avg/max) = 6.048 | 6.048 | 6.048 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+       701   5.4560703      472.49573      0              472.51618      41165589     
+Loop time of 3.7019e-05 on 1 procs for 0 steps with 30 atoms
+
+127.0% CPU use with 1 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 0          | 0          | 0          |   0.0 |  0.00
+Neigh   | 0          | 0          | 0          |   0.0 |  0.00
+Comm    | 0          | 0          | 0          |   0.0 |  0.00
+Output  | 0          | 0          | 0          |   0.0 |  0.00
+Modify  | 0          | 0          | 0          |   0.0 |  0.00
+Other   |            | 3.702e-05  |            |       |100.00
+
+Nlocal:             30 ave          30 max          30 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Nghost:           4648 ave        4648 max        4648 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+Neighs:            554 ave         554 max         554 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+FullNghs:        21232 ave       21232 max       21232 min
+Histogram: 1 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 21232
+Ave neighs/atom = 707.73333
+Neighbor list builds = 0
+Dangerous builds = 0
+print "${etot} ${pairp} ${ptot} ${numat} " append Summary.dat screen no
+Total wall time: 0:04:31

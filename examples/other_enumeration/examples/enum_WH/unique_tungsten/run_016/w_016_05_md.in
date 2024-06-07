@@ -1,0 +1,52 @@
+ &control
+    calculation='cp',
+    restart_mode='from_scratch',
+    verbosity='high',
+    nstep=10000, iprint=100, isave=500,
+    dt=1.0,
+    saverho=.false.,
+    disk_io='low',
+    outdir='./out',
+/
+&system
+    ibrav=0, nat=5, ntyp=1,nspin=2,
+    ecutwfc  =  60.000000000000,
+    ecutrho  =  720,
+    nr1b=24, nr2b=24, nr3b=24,
+    starting_magnetization(1)=0.5000
+/
+
+&electrons
+    electron_dynamics='cg', electron_damping=0.6,
+    startingwfc='random', ampre=0.1,
+    emass=700., emass_cutoff=3.,
+    electron_temperature='nose',
+/
+&ions
+    ion_dynamics='damp', ion_temperature='nose',
+    ion_damping=0.15,
+    tempw=300,
+/
+&cell
+  cell_dynamics='damp-pr',
+  cell_damping=10.15,
+  cell_dofree='all',
+/
+
+      ion_radius(1)=1.0
+/
+
+ATOMIC_SPECIES
+  W  183.840000000000  W.upf
+
+ATOMIC_POSITIONS crystal
+  W    0.000000000000   0.000000000000   0.000000000000  1   1   1 
+  W    0.200000000000   0.400000000000   0.200000000000  1   1   1 
+  W    0.400000000000   0.800000000000   0.400000000000  1   1   1 
+  W    0.600000000000   0.200000000000   0.600000000000  1   1   1 
+  W    0.800000000000   0.600000000000   0.800000000000  1   1   1 
+
+CELL_PARAMETERS bohr
+  6.028225903634  0.000000000000  0.000000000000
+  3.014114820775  9.531468318102  0.000000000000
+  3.014114820775  -0.000001497244  9.531468318102

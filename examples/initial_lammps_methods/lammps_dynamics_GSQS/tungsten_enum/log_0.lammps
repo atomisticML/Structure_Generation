@@ -1,0 +1,8 @@
+mass 1 183.840000
+pair_style hybrid/overlay soft 1.5 mliap model mliappy LATER descriptor ace coupling_coefficients.yace
+Loading python model deferred.
+pair_coeff * * soft 10
+pair_coeff * * mliap   W
+ERROR: Incorrect args for pair coefficients (src/ML-IAP/pair_mliap.cpp:252)
+Last command: pair_coeff * * mliap   W
+Total wall time: 0:00:00

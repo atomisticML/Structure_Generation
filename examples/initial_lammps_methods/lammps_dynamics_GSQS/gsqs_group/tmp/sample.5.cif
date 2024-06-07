@@ -1,0 +1,33 @@
+data_image0
+_chemical_formula_structural       Cr8
+_chemical_formula_sum              "Cr8"
+_cell_length_a       5.76
+_cell_length_b       5.76
+_cell_length_c       2.88
+_cell_angle_alpha    90
+_cell_angle_beta     90
+_cell_angle_gamma    90
+
+_space_group_name_H-M_alt    "P 1"
+_space_group_IT_number       1
+
+loop_
+  _space_group_symop_operation_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_type_symbol
+  _atom_site_label
+  _atom_site_symmetry_multiplicity
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_occupancy
+  Cr  Cr1       1.0  0.37499  0.72068  0.99195  1.0000
+  Cr  Cr2       1.0  0.33800  0.33957  0.23624  1.0000
+  Cr  Cr3       1.0  0.39011  0.47265  0.74590  1.0000
+  Cr  Cr4       1.0  0.13030  0.43442  0.56261  1.0000
+  Cr  Cr5       1.0  0.28848  0.21159  0.73425  1.0000
+  Cr  Cr6       1.0  0.25712  0.68673  0.48774  1.0000
+  Cr  Cr7       1.0  0.26345  0.93804  0.74298  1.0000
+  Cr  Cr8       1.0  0.28755  0.06308  0.24777  1.0000
