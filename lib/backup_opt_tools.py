@@ -1,6 +1,5 @@
 import numpy as vnp
 from ase.io import read,write
-from ase.atoms import Atoms
 
 #manually tabulated minimum soft core cutoffs (if not tabulated here ASE-generated default will be used)
 min_soft = {'Cr':1.65,'Fe':1.7,'Si':1.2,'V':1.65}
@@ -84,17 +83,7 @@ def build_target(start):
         return descriptor_grads
     #start = 'supercell_target.cif'
     file_prefix = 'iter_%d' % 0
-    if type(start) == 'str':
-        try:
-            atoms = read(start)
-        except:
-            raise TypeError("unrecognized file type %s" % inp)
-    elif type(start) == Atoms:
-    #    except
-        atoms = start 
-
-
-    #atoms = read(start)
+    atoms = read(start)
 
     write('%s.data' % file_prefix,atoms,format='lammps-data')
     start_arr = run_struct(atoms, '%s.data'% file_prefix)
@@ -244,14 +233,6 @@ velocity all create 0.0001 4928459 dist gaussian""" % typstr
     #s = generate.format(fname,index,vnp.random.uniform(0.0,1.0))
     s = s1 + generate2
     return s
-
-
-from crystal_enum import *
-def prim_crystal(elem_list):
-    all_prims = get_prim_structs(elem_list, multiatom=False)
-    myind = np.random.choice(range(len(all_prims)))
-    return all_prims[myind]
-
 
 from hnf import *
 def internal_generate_cell(index,desired_size=4,template=None,desired_comps={'Ni':1.0},use_template=None,min_typ='temp',soft_strength=10000):

@@ -49,9 +49,11 @@ def limit_mats_len(hnfs,N,tol = None ):
         tol = N-1
     keeps = []
     for mat in hnfs:
-        norms = np.array([np.linalg.norm(k) for k in mat])
-        norms /= (N/3)
-        flag = all([norm <= tol for norm in norms])
+        norm = np.linalg.norm(mat)
+        norms = np.linalg.norm(mat/norm,axis=1)
+        #norms = np.array([np.linalg.norm(k) for k in mat])
+        #norms /= (N)
+        flag = all([norm >= tol for norm in norms])
         if flag:
             keeps.append(mat)
     return keeps

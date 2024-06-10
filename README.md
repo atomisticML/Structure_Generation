@@ -18,21 +18,26 @@ Add the `/path/to/Structure_Generation/lib` folder to your PYTHONPATH
 ## Parent folder contents
 
 `lib`   - folder containing modules : functions and classes for structure generation & optimization routines
-`tools` - collecting helper scripts here
+`tools` - some helper scripts here - may be removed.
+
+`examples` folder containing examples for local (lammps) and global optimization
+## Examples in the examples folder (workflows and )
+
 `lammps_GSQS_arbitrary` : current recommended workflow for GSQS method - uses lammps mliappy model
 
-*deprecated/or development GSQS examples*
+#### Genetic algorithms (for global optimization)
 `genalg_GSQS` -  folder containing an important example (reproducing traditional SQS for alloys)
 `genalg_GSQS_dynamic` - folder featuring the unique capability of ACE-based GSQS (ability to move move atoms off-lattice to find candidate structures for matching some target) note that this uses the 
 `monte_GSQS` - similar to other GSQS example folders, but contains a simulated annealing algorithm instead of a
 genetic algorithm to optimize loss functions
 
+#### other methods for reference 
 `other_enumeration` - other methods for structure generation & enumeration (only included for reference and comparison)
 will be removed in later versions
 
 ## Definition of GSQS
 
-For theoretical definitions and methods, see the manuscript at: (overleaf for now)
+For theoretical definitions and methods, see the manuscript at: *link_here*
 
 ## USAGE
 
