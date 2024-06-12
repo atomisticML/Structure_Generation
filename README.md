@@ -30,5 +30,4 @@ For theoretical definitions and methods, see the manuscript at: *link_here*
 
 ## USAGE
 
-follow procedure in `examples/simple_test` first.
-
+follow procedure in `examples/simple_test` first. 
